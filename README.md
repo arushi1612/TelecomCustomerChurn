@@ -3,14 +3,14 @@
 <img src ='https://github.com/user-attachments/assets/9eaf652d-e1d4-4031-b1ca-2f5228cc5b10'/>
 </p>
 
-# Project Overview
+## Project Overview
 Telecom customer churn prediction involves identifying which customers are likely to cancel their subscription to a telecom service based on their usage patterns and behaviors. This is particularly crucial in the telecom industry, where retaining customers is essential for maintaining a stable and profitable business.
-# Why is it important?
+## Why is it important?
 Customer churn is a prevalent issue across various sectors, including the telecom industry. To grow as a telecom company, substantial investment is required to acquire new clients. When a customer leaves, it represents a significant loss of investment. The time and effort spent on acquiring and servicing that customer need to be redirected towards replacing them. By predicting when a telecom customer is likely to leave and offering them incentives to stay, a company can achieve considerable savings. This proactive approach not only retains customers but also enhances overall business efficiency and profitability.
-# Dataset
+## Dataset
 The dataset used for this analysis is from a telecom company and can be found here. It contains various customer attributes such as demographics, account information, and services subscribed. The dataset has 7043 entries and 20 features.
 
-Features:
+**Features:**
 * **gender:** Gender of the customer (Female, Male)
 * **SeniorCitizen:** Indicates if the customer is a senior citizen (0: No, 1: Yes)
 * **Partner:** Indicates if the customer has a partner (Yes, No)
@@ -31,3 +31,35 @@ Features:
 * **MonthlyCharges:** The amount charged to the customer monthly
 * **TotalCharges:** The total amount charged to the customer
 * **Churn:** Indicates if the customer churned (Yes, No)
+
+## Key Steps
+### Data Preprocessing:
+- *Null and Missing Values:* Detected and appropriately handled null and missing values.
+- *Duplicate Values:* Identified and removed any duplicated entries.
+
+### Exploratory Data Analysis (EDA):
+- *Univariate Analysis:* Conducted univariate analysis on numerical and categorical features to understand their distribution.
+- *Bivariate Analysis:* Performed bivariate analysis to explore the relationship and trends between features and the target variable (Churn). Identified any outliers present.
+
+### Encoding Variables:
+- *Independent Variables:* Applied one-hot encoding and ordinal encoding to transform categorical independent variables.
+- *Target Variable:* Utilized label encoding for the target variable, Churn.
+
+### Feature Selection:
+- Employed statistical tests such as the Z-test and Chi-square test to analyze the association between numerical/categorical variables and Churn. Dropped variables based on their significance.
+
+### Model Training and Evaluation:
+- *Model:* Trained a logistic regression model to predict customer churn.
+- *Evaluation Metrics:* Evaluated the model using recall and ROC curve.
+
+### Handling Imbalanced Data:
+- *Class Weights:* Managed class imbalance in the churn data by adjusting class weights.
+
+### Assumption Validation:
+- *Multicollinearity:* Checked for multicollinearity using the Variance Inflation Factor (VIF).
+- *Linearity:* Assessed linearity assumptions.
+- *Residual Analysis:* Conducted residual analysis and made necessary adjustments.
+
+### Hyperparameter Tuning:
+- *Techniques:* Used Grid Search CV and RandomizedSearchCV for parameter optimization.
+
